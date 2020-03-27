@@ -1,0 +1,29 @@
+<div class="container overlay">
+  <h4 class="text-center">Add Entry to Diary</h4>
+  <hr>
+  <form (ngSubmit)='submitGoal()' #entryForm='ngForm'>
+      <div class="form-group">
+
+          <label for="name">Entry</label>
+          <input type="text" class="form-control" id="name"[(ngModel)]="newEntry.name" name="name" #name='ngModel' placeholder="Enter Topic here..." required>
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            <p>Name is required</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="detail">Detail</label>
+          <textarea class="form-control" id="detail" rows="4" [(ngModel)]="newEntry.detail" name="detail" #detail="ngModel" placeholder="Describe your topic in Detail...." required></textarea>
+          <div [hidden]="detail.valid || detail.pristine" class="alert alert-danger">
+            <p>Detail is required</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="date">Took Place</label>
+          <input type='date' id="complete" [(ngModel)]="newEntry.completeDate" name="completeDate" #completeDate="ngModel" required>
+          <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+            <p>Date is required</p>
+          </div>
+      </div>
+      <button type="submit" class="btn btn-success">Add Entry</button>
+  </form>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <BR>
+  <div style="text-align:center; font-size: larger;">
+    <h2 class="text-center">Diary</h2>
+  </div>
+  <hr>
+  <div class="card">
+    <div class="row">
+      <div class="col-md-6">
+        <div *ngFor='let entry of entries;let i = index'>
+          <div>
+            <h4 id={{i}} appStrikethrough>{{entry.name}} due on {{entry.completeDate|date|uppercase}}</h4>
+            <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+          </div>
+  
+          <div *ngIf='entry.showDetail'>
+            <app-entrydetail  [entry]='entry' (isComplete) = 'deleteEntry($event,i)'></app-entrydetail>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <app-entry-form (addEntry)="addNewEntry($event)"></app-entry-form>
+      </div>
+    </div>
+  
+    <p *ngIf='entries.length > 5'>You have too many goals</p>
+  </div>
+  
+
+  </div>
+  
+<!-- *ngIf directive works like an if statement -->
+<!-- We catch this event in the parent component using parenthesis()and then define that when it is emitted, the completeGoal($event,i) function should be called.-->
+<!--we have used the special variable, $event as a placeholder for the values that we expect to be emitted by the event.e have used the special variable, $event as a placeholder for the values that we expect to be emitted by the event.-->
+  <!--We used the enrtydetailcomponent selector and also added logic indicating we are binding the entry property to the goal detail component-->

@@ -1,0 +1,18 @@
+.overlay{
+  background-color: rgba(0, 0, 0, 0.8);
+  /* margin-top:5%; */
+  color:pink;
+  border: 1px solid pink;
+  padding: 2%;
+}
+
+hr{
+  background-color: pink;
+  width: 20%;
+}
+.form-control::placeholder{
+  color: pink;
+}
+input[type='text']{
+  color: black;
+}

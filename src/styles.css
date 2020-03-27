@@ -1,0 +1,11 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body{
+  background-image: url("./assets/toa-heftiba-QnUywvDdI1o-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  
+}
+

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <p>
+        {{entry.detail}}
+      </p>
+      <p>This entry will take place in {{entry.completeDate|dateCount}} days</p>
+      <button class="btn btn-outline-danger" (click)= 'entryDelete(true)'>Delete </button>
+    </div>
+  </div>
+  
+
+</div>
+
+<!--added a click event binding syntax which will call the goalComplete(true) function once the button is clicked.-->
